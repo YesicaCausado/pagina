@@ -442,8 +442,9 @@ document.querySelectorAll(".subscribe-form").forEach(form=>{
       say("¡Listo! Revisa tu bandeja de entrada: tu bienvenida a ONIX va en camino.","ok");
       form.reset();
     }catch(err){
+      const detail = err?.text ? ` Detalle: ${err.text}` : "";
       console.error("EmailJS:",err?.text || err);
-      say("No pudimos enviar el correo. Inténtalo de nuevo en unos segundos.","err");
+      say(`No pudimos enviar el correo.${detail}`,"err");
     }finally{
       sending=false; btn.disabled=false; btn.classList.remove("loading");
     }
