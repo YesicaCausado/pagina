@@ -59,7 +59,8 @@ header.top.dark{color:var(--ivory)}
 
 /* Hero */
 .hero{min-height:100vh;display:grid;grid-template-columns:repeat(12,1fr);gap:0 20px;padding:120px var(--pad) 60px;position:relative;align-items:end}
-.hero .meta{grid-column:1/8;display:flex;gap:24px;align-self:start;flex-wrap:wrap}
+.hero .brand-mark{grid-column:1/5;grid-row:1;align-self:start;font:800 clamp(42px,6vw,82px)/1 var(--serif);letter-spacing:.04em}
+.hero .meta{grid-column:1/8;grid-row:1;display:flex;gap:24px;align-self:end;flex-wrap:wrap}
 .hero h1{grid-column:1/9;grid-row:3;font-size:clamp(44px,9vw,148px);position:relative;z-index:3;margin-top:24px}
 .hero h1 .l{display:block;overflow:hidden}
 .hero h1 .l>span{display:inline-block}
@@ -70,8 +71,8 @@ header.top.dark{color:var(--ivory)}
 .hero-form .signup-copy p{font-size:14px;line-height:1.4;max-width:380px}
 .hero-form .field{gap:12px}
 .hero-form .inp{flex-basis:220px}
-.hero-form input{color:var(--espresso);border-color:rgba(32,25,27,.45)}
-.hero-form input::placeholder{color:rgba(32,25,27,.6)}
+.hero-form .field input{color:var(--espresso);border-color:rgba(32,25,27,.45)}
+.hero-form .field input::placeholder{color:rgba(32,25,27,.6)}
 .hero-form .bar{background:var(--cherry)}
 .hero-form .msg{color:var(--espresso)}
 .hero-form .msg.ok{color:var(--cherry)}
@@ -185,6 +186,7 @@ footer{background:var(--espresso);color:var(--ivory);padding:80px var(--pad) 36p
 <main>
 <!-- B. HERO -->
 <section class="hero" id="inicio">
+  <div class="brand-mark">ONIX<span class="dot">.</span></div>
   <div class="meta sans-s"><span>Independent Creative Journal</span><span class="red">Vol. 001 — 2026</span></div>
   <form class="subscribe-form hero-form" novalidate>
     <div class="signup-copy">
@@ -297,9 +299,9 @@ footer{background:var(--espresso);color:var(--ivory);padding:80px var(--pad) 36p
    CONFIGURACIÓN
    ========================================================= */
 // --- EmailJS ---
-const PUBLIC_KEY  = "TU_PUBLIC_KEY";       // EmailJS > Account > API keys
-const SERVICE_ID  = "service_22xg5c3";
-const TEMPLATE_ID = "TU_TEMPLATE_ID";      // En la plantilla, destinatario: {{to_email}}
+const PUBLIC_KEY  = "rd8EhsnT0OgFnRxN6";       // EmailJS > Account > API keys
+const SERVICE_ID  = "service_pqta6rq";
+const TEMPLATE_ID = "template_v1v4lv6";      // En la plantilla, destinatario: {{to_email}}
 
 // --- Imágenes (10). Archivos en assets/images/. Para reemplazar una, guarda otra con el mismo nombre
 //     o cambia la ruta/URL. Si el archivo falta, se ve un bloque tonal de la paleta. ---
