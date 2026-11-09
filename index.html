@@ -433,11 +433,16 @@ document.querySelectorAll(".subscribe-form").forEach(form=>{
 
     sending = true; btn.disabled = true; btn.classList.add("loading"); say("Enviando tu bienvenida…");
     try{
-      await emailjs.send(SERVICE_ID, TEMPLATE_ID, {to_email: email});
+      await emailjs.send(SERVICE_ID, TEMPLATE_ID, {
+        to_email: email,
+        email,
+        user_email: email,
+        reply_to: email
+      });
       say("¡Listo! Revisa tu bandeja de entrada: tu bienvenida a ONIX va en camino.","ok");
       form.reset();
     }catch(err){
-      console.error("EmailJS:",err);
+      console.error("EmailJS:",err?.text || err);
       say("No pudimos enviar el correo. Inténtalo de nuevo en unos segundos.","err");
     }finally{
       sending=false; btn.disabled=false; btn.classList.remove("loading");
